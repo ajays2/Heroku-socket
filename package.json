@@ -1,0 +1,56 @@
+{
+  "author": "William",
+  "contributors": [],
+  "name": "tracker",
+  "description": "Tracker OLAP visit insert",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+  "test": " ./node_modules/.bin/mocha test/api.*.js --reporter spec"
+  },
+  "dependencies": {
+    "hapi": "2.x.x",
+    "lout": "2.x.x",
+    "handlebars": "1.3.x",
+    "underscore": "1.5.2",
+    "async": "~0.2.9",
+    "node-logentries": "~0.1.2",
+    "request": "~2.33.0",
+    "joi": "~2.5.0",
+    "nconf": "~0.6.7",
+    "boom": "~2.2.0",
+	"firebase": "~1.1.1",	
+	"mssql": "~1.2.x",
+         "socket.io":"1.1.0",
+         "http":"0.0.0",  
+       "serialport":"1.4.6",
+       "url":"0.01.1"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "mocha": "~1.13.0",
+    "pkginfo": "0.2.3",
+    "should": "~2.0.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "nock": "~0.27.2",
+    "chai": "~1.9.0",
+    "supertest": "~0.9.0",
+	"mongoose-uuid": "0.0.2",
+	"mongoose": "~3.8.12",
+	"firebase": "~1.1.1",	
+	"mssql": "~1.2.x",
+      "socket.io":"~1.1.0",
+      "http":"~0.0.0",  
+       "serialport":"~1.4.6",
+       "url":"~0.10.1"
+
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.10.21"
+  },
+  "private": "true"
+}
