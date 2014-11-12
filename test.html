@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+    <script type="text/javascript" src="../Socket/node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+        <script type="text/javascript" src="knockout-3.2.0.js"></script>
+    <script>
+    window.onload = function() {
+
+      var sensorModel = {
+         value: ko.observable(200),
+                status: ko.observable("vacant")
+      }
+      ko.applyBindings(sensorModel);
+
+      var sensor = document.getElementById('sensor');
+      var socket = io.connect("http://localhost:8888");
+	  console.log(socket);
+      socket.on("update", function (data) {
+	  console.log("test");
+        sensorModel.value(data.value);
+        sensorModel.status(data.status);
+        console.log(data);
+      });
+    }
+    </script>
+        <title>Testing result</title>
+    </head>
+    <body>
+        <div>
+    <p>The area is <span data-bind="text: status"></span></p>
+	 <p>Data <span data-bind="text: value"></span></p>
+        </div>
+    </body>
+</html>

@@ -1,10 +1,10 @@
 
 var server = require("./server");
 
-httpserver = server.start();
+//httpserver = server.start();
 
 var io = require("socket.io").listen(httpserver);
-//console.log(io);
+console.log(io);
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort; // localize object constructor
 var portname = "COM3";
@@ -29,13 +29,12 @@ io.sockets.on('connection', function (socket) {
 serialPort.on("open", function () {
   console.log('open');
   serialPort.on('data', function(data) {
-    console.log("Receivied");
-    console.log('data : ' + data);
-        var reading = parseInt(data);
-    var stat = "vacant1";
-    if (reading < 50) {
+    console.log('data received: ' + data);
+    var reading = parseInt(data);
+    var stat = "vacant";
+   if (reading < 50) {
         stat = "occupied";
     }
-    io.sockets.emit('update',{value: reading, status: stat});
+    io.sockets.emit('update',{value: data, status: stat});
   });   
 });
